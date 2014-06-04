@@ -140,7 +140,7 @@ public class TileMap
 	{
 		if(x < xmin) x = xmin;
 		if(y < ymin) y = ymin;
-		if(x > xmax) y = xmax;
+		if(x > xmax) x = xmax;
 		if(y > ymax) y = ymax;
 	}
 	

@@ -87,7 +87,7 @@ public abstract class MapObject
 		int leftTile = (int)(x - cwidth / 2) / tileSize;
 		int rightTile = (int)(x + cwidth / 2 - 1) / tileSize;
 		int topTile = (int) (y - cheight / 2) / tileSize;
-		int bottomTile = (int) (y +cheight / 2) - 1 / tileSize;
+		int bottomTile = (int) (y + cheight / 2 - 1) / tileSize;
 		
 		int tl = tileMap.getType(topTile, leftTile);
 		int tr = tileMap.getType(topTile, rightTile);
