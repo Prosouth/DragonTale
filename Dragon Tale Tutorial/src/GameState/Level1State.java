@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
 import Entity.Player;
+import Main.GamePanel;
 import TileMap.Background;
 import TileMap.TileMap;
 
@@ -26,6 +27,8 @@ public class Level1State extends GameState
 		tileMap.loadTiles("/Tilesets/grasstileset.gif");
 		tileMap.loadMap("/Maps/level1-1.map");
 		tileMap.setPosition(0, 0);
+		tileMap.setTween(1);
+		
 		
 		bg = new Background("/Backgrounds/grassbg1.gif", 0.1);
 		
@@ -37,6 +40,9 @@ public class Level1State extends GameState
 	{
 		// update player
 		player.update();
+		
+		tileMap.setPosition(GamePanel.WIDTH / 2 - player.getx(), GamePanel.HEIGHT / 2 - player.gety());
+		
 	}
 	
 	public void draw(Graphics2D g) 
