@@ -2,13 +2,9 @@ package Main;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-
 import javax.swing.JPanel;
-
 import GameState.GameStateManager;
-
 import java.awt.event.*;
-
 
 @SuppressWarnings("serial")
 public class GamePanel extends JPanel implements Runnable, KeyListener{
@@ -31,16 +27,12 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	// game state manager 
 	private GameStateManager gsm;
 	
-	
-	
 	public GamePanel ()
 	{
 		super();
 		setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		setFocusable(true);
-		requestFocus();
-		
-		
+		requestFocus();	
 	}
 	
 	public void addNotify() 
@@ -61,8 +53,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 		
 		running = true; 
 		
-		gsm = new GameStateManager();
-		
+		gsm = new GameStateManager();	
 	}
 	
 	public void run() 
@@ -73,14 +64,11 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 		long start;
 		long elapsed;
 		long wait;
-		
-		
+			
 		//game loop
 		while(running)
 		{
-			start = System.nanoTime();
-			
-			
+			start = System.nanoTime();	
 			update();
 			draw();
 			drawToScreen();
@@ -91,8 +79,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 			if(wait < 0)
 			{
 				wait = 5;
-			}
-			
+			}			
 			try 
 			{
 				Thread.sleep(wait);
@@ -103,14 +90,17 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 			}
 		}
 	}
+	
 	private void update() 
 	{
 		gsm.update();
 	}
+	
 	private void draw() 
 	{
 		gsm.draw(g);
 	}
+	
 	private void drawToScreen() 
 	{
 		Graphics g2 = getGraphics();
@@ -119,18 +109,18 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 		
 	}
 	
-	
 	public void keyTyped(KeyEvent key)
 	{
 		
 	}
+	
 	public void keyPressed(KeyEvent key)
 	{
 		gsm.keyPressed(key.getKeyCode());
 	}
+	
 	public void keyReleased(KeyEvent key)
 	{
 		gsm.keyReleased(key.getKeyCode());
 	}
-	
-}	
+}

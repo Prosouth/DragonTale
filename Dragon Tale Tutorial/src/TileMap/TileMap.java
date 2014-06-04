@@ -2,11 +2,8 @@ package TileMap;
 import java.awt.*;
 import java.awt.image.*;
 import java.io.*;
-
 import javax.imageio.ImageIO;
-
 import Main.GamePanel;
-
 
 public class TileMap 
 {
@@ -65,14 +62,12 @@ public class TileMap
 				tiles [0] [col] = new Tile(subimage, Tile.NORMAL);
 				subimage = tileset.getSubimage(col * tileSize, tileSize, tileSize, tileSize);
 				tiles [1] [col] = new Tile(subimage, Tile.BLOCKED);
-
 			}
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public void loadMap(String s)
@@ -127,7 +122,6 @@ public class TileMap
 		
 		colOffset = (int)-this.x / tileSize;
 		rowOffset = (int)-this.y / tileSize;
-		
 	}
 	
 	private void fixBounds()

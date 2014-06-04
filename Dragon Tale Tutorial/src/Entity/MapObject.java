@@ -97,9 +97,7 @@ public abstract class MapObject
 		topLeft = tl == Tile.BLOCKED;
 		topRight = tr == Tile.BLOCKED;
 		bottomRight = br == Tile.BLOCKED;
-		bottomLeft = bl == Tile.BLOCKED;
-		
-		
+		bottomLeft = bl == Tile.BLOCKED;	
 	}
 	
 	public void checkTileMapCollision()
@@ -160,6 +158,10 @@ public abstract class MapObject
 				dx = 0;
 				xtemp = (currCol + 1) * tileSize - cwidth / 2;
 			}
+			else 
+			{
+				xtemp += dx;
+			}
 		}
 		
 		if(!falling)
@@ -193,7 +195,7 @@ public abstract class MapObject
 	
 	public void setMapPosition()
 	{
-		// Pas capté la différence entre ça et setPosition
+		// 
 		xmap = tileMap.getx();
 		ymap = tileMap.gety();
 	}
