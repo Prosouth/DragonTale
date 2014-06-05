@@ -68,7 +68,7 @@ public class Player extends MapObject
 		
 		fireCost = 200;
 		fireBallDamage = 5;
-		// fireBall = new ArrayList<FireBall>();
+		fireBalls = new ArrayList<FireBall>();
 		
 		scratchDamage = 8;
 		scratchRange = 40;

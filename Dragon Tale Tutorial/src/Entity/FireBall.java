@@ -25,34 +25,37 @@ public class FireBall extends MapObject
 		}
 		else
 		{
-			width = 30;
-			height = 30;
-			cwidth = 14;
-			cheight = 14;
-			
-			// load sprites
-			try
-			{
-				BufferedImage spritesheet = ImageIO.read(getClass().getResourceAsStream("/Sprites/Player/fireball.gif"));
-				sprites = new BufferedImage[4];
-				for(int i = 0; i < sprites.length; i++)
-				{
-					sprites[i] = spritesheet.getSubimage(i * width, 0, width, height);
-					hitSprites = new BufferedImage[3];
-					for(int j = 0; j < hitSprites.length; j++)
-					{
-						hitSprites[j] = spritesheet.getSubimage(j * width, height, width, height);
-					}
-				}
-				animation = new Animation();
-				animation.setFrames(sprites);
-				animation.setDelay(70);
-			}
-			catch(Exception e)
-			{
-				e.printStackTrace();
-			}
+			dx = -moveSpeed;
 		}
+			
+		width = 30;
+		height = 30;
+		cwidth = 14;
+		cheight = 14;
+		
+		// load sprites
+		try
+		{
+			BufferedImage spritesheet = ImageIO.read(getClass().getResourceAsStream("/Sprites/Player/fireball.gif"));
+			sprites = new BufferedImage[4];
+			for(int i = 0; i < sprites.length; i++)
+			{
+				sprites[i] = spritesheet.getSubimage(i * width, 0, width, height);
+				hitSprites = new BufferedImage[3];
+				for(int j = 0; j < hitSprites.length; j++)
+				{
+					hitSprites[j] = spritesheet.getSubimage(j * width, height, width, height);
+				}
+			}
+			animation = new Animation();
+			animation.setFrames(sprites);
+			animation.setDelay(70);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	
 	}
 	
 	public void setHit()
