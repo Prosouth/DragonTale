@@ -2,7 +2,6 @@ package Entity;
 
 import java.awt.image.BufferedImage;
 
-
 public class Animation 
 {
 	
@@ -49,10 +48,7 @@ public class Animation
 			playedOnce = true;
 		}
 	}
-	
 	public int getFrame() { return currentFrame; }
 	public BufferedImage getImage() { return frames[currentFrame];  }
-	public boolean hasPlayedOnce() { return playedOnce; }
-	
+	public boolean hasPlayedOnce() { return playedOnce; }	
 }
-

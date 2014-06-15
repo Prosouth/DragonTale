@@ -444,8 +444,7 @@ public class Player extends MapObject
 			{
 				return;
 			}
-		}
-		
+		}		
 		super.draw(g);
 	}
 }

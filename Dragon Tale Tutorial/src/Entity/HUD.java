@@ -35,5 +35,4 @@ public class HUD {
 		g.drawString(player.getHealth() + "/" + player.getMaxHealth(), 30, 25);
 		g.drawString(player.getFire() / 100 + "/" + player.getMaxFire() / 100, 30, 45);
 	}
-
 }
