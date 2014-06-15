@@ -96,21 +96,19 @@ public class Slugger extends Enemy
 				flinching = false;
 			}
 		}
-		
-		// if it hits a wall, go other direction 
-		if(right && dx == 0)
-		{
+				
+		// if it hits a wall, go other direction
+		if(right && dx == 0) {
 			right = false;
 			left = true;
 			facingRight = false;
 		}
-		if(left && dx == 0)
-		{
-			left = true;
-			right = false;
+		else if(left && dx == 0) {
+			right = true;
+			left = false;
 			facingRight = true;
 		}
-		
+
 		//update animation
 		animation.update();
 	}
@@ -119,7 +117,6 @@ public class Slugger extends Enemy
 	{
 		setMapPosition();
 		super.draw(g);
-		
 	}
 	
 }
