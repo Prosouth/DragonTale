@@ -1,4 +1,4 @@
 DragonTale
 ==========
 
-Dragon Tale Tutorial from ForeignGuyMike on Youtube
+Dragon Tale Tutorial from ForeignGuyMike on Youtube.
